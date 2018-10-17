@@ -1,0 +1,10 @@
+<h1>Welcome To The Blog Site</h1>
+
+<a href="{% url 'newsFeed' %}">News Feed</a>
+
+{% block login %}
+
+<h4>Log Into Your Profile</h4>
+<a href="{% url 'login' %}">Login</a>
+
+{% endblock %}

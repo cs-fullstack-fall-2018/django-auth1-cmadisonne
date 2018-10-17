@@ -1,0 +1,26 @@
+{# Testing here #}
+{% load static %}
+<link rel="stylesheet" href="{% static 'forms_app/bootstrap.css' %}">
+<div class="jumbotron">
+    <h1>Blog Site</h1>
+    <a href="{% url 'newsFeed' %}">News Feed</a>
+    {% if user.is_authenticated %}
+    <h1>{{user.get_username}}'s Profile</h1>
+    {% else %}
+    Not logged in
+    {% endif %}
+</div>
+{% if form_list %}
+
+    {% for eachItem in form_list %}
+    <h2>{{ eachItem.blogTitle }}</h2>
+    <h4>by: {{ eachItem.username }}</h4>
+    <p>{{ eachItem.blogEntry }}</p>
+    <p>Created On: {{ eachItem.date }}</p>
+    {% endfor %}
+
+{% else %}
+<p>No Blogs Available.</p>
+{% endif %}
+<script src="{% static 'forms_app/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'forms_app/bootstrap.js' %}"></script>

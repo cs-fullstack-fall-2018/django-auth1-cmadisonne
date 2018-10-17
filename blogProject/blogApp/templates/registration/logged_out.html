@@ -1,0 +1,10 @@
+{% extends "blogApp/index.html" %}
+
+<a href="{% url 'newsFeed' %}">News Feed</a>
+
+{% block login %}
+
+<h4>Log Into Your Profile</h4>
+<a href="{% url 'login' %}">Login</a>
+
+{% endblock %}
